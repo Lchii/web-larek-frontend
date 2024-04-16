@@ -133,3 +133,8 @@ export function createElement<
     }
     return element;
 }
+
+export function formatNumber(n: number, sep = ' ') {
+    const numStr = n.toString();
+    return numStr.length > 4 ? numStr.replace(/\B(?=(\d{3})+(?!\d))/g, sep) : numStr;
+}
